@@ -14,9 +14,9 @@ grunt.initConfig({
 		all: {
 			options: {
 				// String to prepend to JS output. Supports text pattern replacement (see below).
-				prefix: "window.App.library.shape['@@filename'] = ",
+				prepend: "window.App.library.shape['@@filename'] = ",
 				// String to append to JS output. Supports text pattern replacement (see below).
-				suffix: ";"
+				append: ";"
 			},
 			// Specify files in array format with multiple src-dest mapping
 			files: [{cwd: 'test/files/src/', src: ['*.svg'], dest: 'test/files/dest/'}]
@@ -33,6 +33,7 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
+* 0.1.1 Rename `prefix` and `suffix` options to `prepend` and `append` respectively
 * 0.1.0 First release
 
 ## Credits

@@ -15,8 +15,8 @@ module.exports = function (grunt) {
 
 	grunt.registerMultiTask('rappar', 'Grunt plugin to convert SVG to Raphaël instructions.', function () {
 		var options = this.options({
-			prefix: '',
-			suffix: ''
+			prepend: '',
+			append: ''
 		});
 
 		var done = this.async();
@@ -49,8 +49,8 @@ module.exports = function (grunt) {
 				jobs.push({
 					src: path.resolve(cwd + file),
 					dest: destPath + '/' + basename.replace(/\.svg$/i, '.js'),
-					prefix: applause.replace(options.prefix) || options.prefix,
-					suffix: applause.replace(options.suffix) || options.suffix
+					prepend: applause.replace(options.prepend) || options.prepend,
+					append: applause.replace(options.append) || options.append
 				});
 			});
 		});
@@ -63,8 +63,8 @@ module.exports = function (grunt) {
 				args: [
 					rapparPath,
 					job.src,
-					job.prefix,
-					job.suffix
+					job.prepend,
+					job.append
 				]
 			},
 			function (err, result, code) {

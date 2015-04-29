@@ -27,8 +27,8 @@ module.exports = function (grunt) {
 		rappar: {
 			tests: {
 				options: {
-					prefix: "window.App.library.shape['@@filename'] = ",
-					suffix: ";"
+					prepend: "window.App.library.shape['@@filename'] = ",
+					append: ";"
 				},
 				files: [{cwd: 'test/files/src/', src: ['*.svg'], dest: 'test/files/dest/'}]
 			}

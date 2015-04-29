@@ -1,0 +1,3 @@
+[submodule "tasks/rappar"]
+	path = tasks/rappar
+	url = https://github.com/netbek/rappar.git

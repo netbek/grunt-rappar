@@ -47,8 +47,8 @@ module.exports = function (grunt) {
 				});
 
 				jobs.push({
-					src: path.resolve(cwd + file),
-					dest: destPath + '/' + basename.replace(/\.svg$/i, '.js'),
+					src: path.resolve(cwd, file),
+					dest: path.resolve(destPath, basename.replace(/\.svg$/i, '.js')),
 					prepend: applause.replace(options.prepend) || options.prepend,
 					append: applause.replace(options.append) || options.append
 				});
